@@ -1,0 +1,62 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "WSL",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include",
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/include/ncursesw"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        },
+        {
+            "name": "Windows MSYS2 (mingw64)",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/msys64/mingw64/include",
+                "C:/msys64/mingw64/include/ncursesw"
+            ],
+            "defines": [
+                "_CRT_SECURE_NO_WARNINGS"
+            ],
+            "compilerPath": "C:/msys64/mingw64/bin/gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        },
+        {
+            "name": "Windows MSYS2 (ucrt64)",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/msys64/ucrt64/include",
+                "C:/msys64/ucrt64/include/ncursesw"
+            ],
+            "defines": [
+                "_CRT_SECURE_NO_WARNINGS"
+            ],
+            "compilerPath": "C:/msys64/ucrt64/bin/gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        },
+        {
+            "name": "Windows PDCurses (curses.h)",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/pdcurses/include"
+            ],
+            "defines": [
+                "PDC_WIDE"
+            ],
+            "compilerPath": "C:/mingw64/bin/gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ]
+}

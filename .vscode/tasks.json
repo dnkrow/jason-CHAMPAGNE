@@ -1,0 +1,129 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build snake (WSL make)",
+      "type": "shell",
+      "command": "make",
+      "args": ["-C", "snake"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Run snake (WSL)",
+      "type": "shell",
+      "command": "./snake_game",
+      "options": {
+        "cwd": "${workspaceFolder}/snake",
+        "env": {
+          "TERM": "xterm-256color"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build snake (MSYS2 mingw64)",
+      "type": "shell",
+      "command": "C:/msys64/mingw64/bin/gcc.exe",
+      "args": [
+        "snake/main.c",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-pedantic",
+        "-I",
+        "C:/msys64/mingw64/include/ncursesw",
+        "-lncursesw",
+        "-o",
+        "snake/snake_game.exe"
+      ],
+      "options": {
+        "env": {
+          "PATH": "${env:PATH};C:/msys64/mingw64/bin"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Build snake (MSYS2 ucrt64)",
+      "type": "shell",
+      "command": "C:/msys64/ucrt64/bin/gcc.exe",
+      "args": [
+        "snake/main.c",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-pedantic",
+        "-I",
+        "C:/msys64/ucrt64/include/ncursesw",
+        "-lncursesw",
+        "-o",
+        "snake/snake_game.exe"
+      ],
+      "options": {
+        "env": {
+          "PATH": "${env:PATH};C:/msys64/ucrt64/bin"
+        }
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Build snake (PDCurses)",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "snake/main.c",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-pedantic",
+        "-I",
+        "C:/pdcurses/include",
+        "-L",
+        "C:/pdcurses/lib",
+        "-lpdcurses",
+        "-o",
+        "snake/snake_game.exe"
+      ],
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Run snake (MSYS2 mingw64)",
+      "type": "shell",
+      "command": "snake/snake_game.exe",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:PATH};C:/msys64/mingw64/bin",
+          "TERM": "xterm-256color",
+          "TERMINFO": "C:/msys64/mingw64/share/terminfo"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run snake (MSYS2 ucrt64)",
+      "type": "shell",
+      "command": "snake/snake_game.exe",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:PATH};C:/msys64/ucrt64/bin",
+          "TERM": "xterm-256color",
+          "TERMINFO": "C:/msys64/ucrt64/share/terminfo"
+        }
+      },
+      "problemMatcher": []
+    }
+  ]
+}
